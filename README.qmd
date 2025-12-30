@@ -1,6 +1,5 @@
 ---
 title: "Virtual Stock Exchange (VSE) Portfolio Optimization Project"
-author: "Connor McHugh"
 format: gfm
 execute: 
   warning: false

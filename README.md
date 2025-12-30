@@ -1,5 +1,5 @@
 # Virtual Stock Exchange (VSE) Portfolio Optimization Project
-Connor McHugh
+
 
 ## Project Overview
 
