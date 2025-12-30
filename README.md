@@ -1,0 +1,220 @@
+# Virtual Stock Exchange (VSE) Portfolio Optimization Project
+Connor McHugh
+
+## Project Overview
+
+This project is a **Virtual Stock Exchange (VSE) simulation** completed
+over the course of a semester for *Financial Analytics 454*. Using
+**fake capital in a simulated market**, the goal was to design, test,
+and execute **quantitatively driven investment strategies** grounded in
+modern portfolio theory.
+
+- **Initial Capital:** \$100,000  
+- **Trading Period:** October 10, 2024 – December 6, 2024  
+- **Final Portfolio Value:** \$101,037  
+- **Total Return:** 1.037%  
+- **Final Class Rank:** 112
+
+All analysis, optimization, and decision-making logic was implemented in
+**R**, with trades executed in the VSE platform based on model outputs.
+
+This project emphasized **decision-making under risk**, **portfolio
+construction**, and **performance evaluation**, rather than short-term
+speculation.
+
+------------------------------------------------------------------------
+
+## Why This Project Matters
+
+This project was valuable because it connected **financial theory to
+real decision-making**:
+
+- Translated **mathematical optimization** into actionable investment
+  decisions
+- Demonstrated how **risk preferences** influence portfolio allocation
+- Provided hands-on experience with:
+  - Efficient frontiers
+  - Sharpe ratios
+  - Capital allocation to risky assets
+  - Single-index models
+- Reinforced that *optimal portfolios are not necessarily the
+  highest-return portfolios*, but those with the **best risk-adjusted
+  performance**
+
+As a first exposure to systematic investing with a defined strategy,
+this project significantly improved my understanding of how portfolios
+behave under real-world market conditions.
+
+------------------------------------------------------------------------
+
+## Tools & Technologies
+
+- **Programming Language:** R  
+- **Data Structures:** `xts` time series objects  
+- **Market Data:** ETF price histories  
+- **Risk-Free Rate:** 3-Month Treasury Bill (DGS3MO)  
+- **Analysis Techniques:**
+  - Excess returns
+  - Efficient frontier construction
+  - Tangency portfolios
+  - Sharpe ratio & Information ratio
+  - Capital allocation models
+
+All modeling logic can be found in `VSE_ConnorMcHugh.R`.
+
+------------------------------------------------------------------------
+
+## Portfolio Performance Summary
+
+### Overall Portfolio Perfomance
+
+![Portfolio Performance Screenshot](images/image1.png)
+
+*Figure: Portfolio performance over the full simulation*
+
+This visualization tracks the **day-by-day** net worth of the portfolio
+throughout the simulation period, highlighting overall growth,
+drawdowns, and recovery periods.
+
+### Key Results
+
+- **Top Performer:**
+  - XLP (Consumer Staples ETF)  
+  - +2.95% gain  
+  - Largest absolute contribution to portfolio value
+- **Worst Performer:**
+  - XLY (Consumer Discretionary ETF)  
+  - −6.34% loss
+
+### Portfolio Behavior
+
+The portfolio’s net worth showed two notable drawdowns:
+
+- **Post-election volatility (Early November):**  
+  Increased uncertainty following the presidential election caused
+  sector rotation and short-term losses.
+
+- **Post–Black Friday correction (Late November):**  
+  Prices fell after consumer spending expectations normalized following
+  Black Friday.
+
+Despite these drawdowns, the portfolio recovered quickly and remained
+above the initial \$100,000 for most of the simulation.
+
+------------------------------------------------------------------------
+
+## Risk-Adjusted Performance
+
+### Sharpe Ratio Analysis
+
+![Sharpe Ratio Screenshot](images/image2.png)
+
+*Figure: Annualized Sharpe Ratio of the portfolio*
+
+- **Annualized Sharpe Ratio:** 0.3594
+
+This indicates that for every unit of risk taken, the portfolio
+generated **0.3594 units of excess return**. While not aggressive, this
+reflects a **risk-conscious strategy** aligned with my investment
+preferences.
+
+------------------------------------------------------------------------
+
+## Trading Strategy & Transactions
+
+### Transaction 1: Capital Allocation to Risky Assets (SPY)
+
+**Objective:** Determine optimal exposure to the market portfolio.
+
+- Used SPY daily returns (2020–2024)
+- Calculated excess returns and risk premium
+- Derived optimal allocation using capital allocation theory
+- Model suggested leverage, but allocation was capped at \$200,000
+
+**Outcome:** - Purchased 347 shares of SPY - Fully invested with no cash
+remaining
+
+This trade established a market baseline before transitioning to
+multi-asset optimization.
+
+------------------------------------------------------------------------
+
+### Transaction 2: Efficient Frontier & Optimal Risky Portfolio
+
+![Efficient Frontier Screenshot](images/image3.jpeg)
+
+*Figure: Efficient frontier with individual ETFs, minimum variance
+portfolio, and tangency portfolio.*
+
+**Objective:** Construct a diversified portfolio using multiple ETFs.
+
+- ETFs analyzed:
+  - XLK, XLV, XLF, XLY, XLP, XLU, XLE, XLC, XLI, XLRE, XLB
+- Sample period: July 2018 – October 2024
+- Built efficient frontier and identified tangency portfolio
+- Removed highest-risk ETFs (XLK, XLE, XLY)
+
+**Final Portfolio Weights:** - XLV: 52.28% - XLP: 38.47% - XLB: 9.25%
+
+**Outcome:** - Sold SPY holdings - Purchased XLV, XLP, and XLB - Fully
+invested with zero cash
+
+This step demonstrated how **diversification improves risk-adjusted
+returns** relative to single-asset portfolios.
+
+------------------------------------------------------------------------
+
+### Transaction 3: Single Index Model & Information Ratios
+
+**Objective:** Identify ETFs with superior risk-adjusted alpha.
+
+- Used single-index regression models
+- Estimated alpha, beta, and residual risk
+- Computed information ratios across ETFs
+
+**Long Positions:** - XLK - XLU - XLV
+
+**Short Positions:** - XLY - XLRE - XLB
+
+The portfolio was **equally weighted** within long and short positions,
+reinforcing neutrality while targeting relative performance differences.
+
+------------------------------------------------------------------------
+
+## Lessons Learned
+
+- Markets react strongly to **macro events** (elections, holidays)
+- Timing and execution matter, even with correct models
+- Risk-adjusted metrics provide better insight than raw returns
+- Portfolio theory is powerful, but **constraints matter in practice**
+- Small mistakes (trade timing, execution errors) can materially impact
+  outcomes
+
+Most importantly, this project reinforced that **disciplined,
+model-driven investing** leads to better long-term decision-making than
+intuition alone.
+
+------------------------------------------------------------------------
+
+## Future Improvements
+
+- Automate trade execution to reduce human error
+- Incorporate transaction costs and slippage
+- Explore dynamic rebalancing strategies
+- Extend models to include factor-based approaches
+
+------------------------------------------------------------------------
+
+## Files
+
+- `VSE_ConnorMcHugh.R` — R code for all analysis and optimization
+
+------------------------------------------------------------------------
+
+## Author
+
+- **Connor McHugh**
+
+*This project represents my first full implementation of quantitative
+portfolio construction using real financial theory in a simulated market
+environment.*
